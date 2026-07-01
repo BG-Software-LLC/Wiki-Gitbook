@@ -1,0 +1,123 @@
+# Table of contents
+
+* [Welcome to BG-Software](README.md)
+
+## WildInspect
+
+* [Overview](wildinspect/overview.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildInspect)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildInspect/issues)
+* [Download](https://bg-software.com/wildinspect/)
+
+## WildBuster
+
+* [Overview](wildbuster/overview/README.md)
+  * [Commands and Permissions](wildbuster/overview/commands-and-permissions.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildBuster)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildBuster/issues)
+* [Download](https://bg-software.com/wildbuster/)
+
+## WildStacker
+
+* [Overview](wildstacker/overview/README.md)
+  * [Commands and Permissions](wildstacker/overview/commands-and-permissions.md)
+  * [Items Stacker](wildstacker/overview/items-stacker.md)
+  * [Entities Stacker](wildstacker/overview/entities-stacker/README.md)
+    * [Loot Tables](wildstacker/overview/entities-stacker/loot-tables.md)
+    * [Linked Entities](wildstacker/overview/entities-stacker/linked-entities.md)
+  * [Spawners Stacker](wildstacker/overview/spawners-stacker/README.md)
+    * [Spawners Override](wildstacker/overview/spawners-stacker/spawners-override/README.md)
+      * [Spawn Conditions](wildstacker/overview/spawners-stacker/spawners-override/spawn-conditions.md)
+    * [Spawner Upgrades](wildstacker/overview/spawners-stacker/spawner-upgrades.md)
+  * [Blocks Stacker](wildstacker/overview/blocks-stacker.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildStacker)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildStacker/issues)
+* [Download](https://bg-software.com/wildstacker/)
+
+## WildTools
+
+* [Overview](wildtools/overview/README.md)
+  * [Commands and Permissions](wildtools/overview/commands-and-permissions.md)
+  * [Configuring Tools](wildtools/overview/configuring-tools.md)
+  * [Builder Tool](wildtools/overview/builder-tool.md)
+  * [Cannon Tool](wildtools/overview/cannon-tool.md)
+  * [Crafting Tool](wildtools/overview/crafting-tool.md)
+  * [Crowbar Tool](wildtools/overview/crowbar-tool.md)
+  * [Cuboid Tool](wildtools/overview/cuboid-tool.md)
+  * [Drain Tool](wildtools/overview/drain-tool.md)
+  * [Harvester Tool](wildtools/overview/harvester-tool.md)
+  * [Ice Tool](wildtools/overview/ice-tool.md)
+  * [Lightning Tool](wildtools/overview/lightning-tool.md)
+  * [Magnet Tool](wildtools/overview/magnet-tool.md)
+  * [Pillar Tool](wildtools/overview/pillar-tool.md)
+  * [Sell Tool](wildtools/overview/sell-tool.md)
+  * [Sort Tool](wildtools/overview/sort-tool.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildTools)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildTools/issues)
+* [Download](https://bg-software.com/wildtools/)
+
+## WildChests
+
+* [Overview](wildchests/overview/README.md)
+  * [Commands and Permissions](wildchests/overview/commands-and-permissions.md)
+  * [Configuring Chests](wildchests/overview/configuring-chests.md)
+  * [Linked Chests](wildchests/overview/linked-chests.md)
+  * [Regular Chests](wildchests/overview/regular-chests.md)
+  * [Storage Units](wildchests/overview/storage-units.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildChests)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildChests/issues)
+* [Download](https://bg-software.com/wildchests/)
+
+## WildLoaders
+
+* [Overview](wildloaders/overview/README.md)
+  * [Commands and Permissions](wildloaders/overview/commands-and-permissions.md)
+* [Source Code](https://github.com/BG-Software-LLC/WildLoaders)
+* [Issues Tracker](https://github.com/BG-Software-LLC/WildLoaders/issues)
+* [Download](https://bg-software.com/wildloaders/)
+
+## SuperiorSkyblock
+
+* [Overview](superiorskyblock/overview/README.md)
+  * [Commands and Permissions](superiorskyblock/overview/commands-and-permissions/README.md)
+    * [Player Commands](superiorskyblock/overview/commands-and-permissions/player-commands.md)
+    * [Admin Commands](superiorskyblock/overview/commands-and-permissions/admin-commands.md)
+    * [Permissions](superiorskyblock/overview/commands-and-permissions/permissions.md)
+  * [Placeholders](superiorskyblock/overview/placeholders/README.md)
+    * [Global Placeholders](superiorskyblock/overview/placeholders/global-placeholders.md)
+    * [Island Placeholders](superiorskyblock/overview/placeholders/island-placeholders.md)
+    * [Player Placeholders](superiorskyblock/overview/placeholders/player-placeholders.md)
+    * [Chat Placeholders](superiorskyblock/overview/placeholders/chat-placeholders.md)
+  * [Configuration Files](superiorskyblock/overview/configuration-files.md)
+  * [Messages](superiorskyblock/overview/messages.md)
+  * [Island Flags](superiorskyblock/overview/island-flags.md)
+  * [Island Privileges](superiorskyblock/overview/island-privileges.md)
+  * [Schematics](superiorskyblock/overview/schematics.md)
+  * [Upgrades](superiorskyblock/overview/upgrades/README.md)
+    * [Island Multipliers](superiorskyblock/overview/upgrades/island-multipliers.md)
+  * [Menus](superiorskyblock/overview/menus/README.md)
+    * [Bank Logs Menu](superiorskyblock/overview/menus/bank-logs-menu.md)
+    * [Biomes Menu](superiorskyblock/overview/menus/biomes-menu.md)
+  * [Missions](superiorskyblock/overview/missions/README.md)
+    * [BlocksMissions](superiorskyblock/overview/missions/blocksmissions.md)
+    * [BrewingMissions](superiorskyblock/overview/missions/brewingmissions.md)
+    * [CraftingMissions](superiorskyblock/overview/missions/craftingmissions.md)
+    * [EnchantingMissions](superiorskyblock/overview/missions/enchantingmissions.md)
+    * [FarmingMissions](superiorskyblock/overview/missions/farmingmissions.md)
+    * [FishingMissions](superiorskyblock/overview/missions/fishingmissions.md)
+    * [IslandMissions](superiorskyblock/overview/missions/islandmissions.md)
+    * [ItemsMissions](superiorskyblock/overview/missions/itemsmissions.md)
+    * [KillsMissions](superiorskyblock/overview/missions/killsmissions.md)
+    * [StatisticsMissions](superiorskyblock/overview/missions/statisticsmissions.md)
+  * [Javascript Engine](superiorskyblock/overview/javascript-engine.md)
+  * [Custom Blocks](superiorskyblock/overview/custom-blocks.md)
+  * [API](superiorskyblock/overview/api/README.md)
+    * [Register your own command](superiorskyblock/overview/api/register-your-own-command.md)
+    * [Register your own block-keys](superiorskyblock/overview/api/register-your-own-block-keys.md)
+  * [Addons](superiorskyblock/overview/addons/README.md)
+    * [SSBSlimeWorlds](superiorskyblock/overview/addons/ssbslimeworlds.md)
+    * [SSBOneBlock](superiorskyblock/overview/addons/ssboneblock.md)
+    * [SSBProxyBridge](superiorskyblock/overview/addons/ssbproxybridge.md)
+* [Source Code](https://github.com/BG-Software-LLC/SuperiorSkyblock2)
+* [Issues Tracker](https://github.com/BG-Software-LLC/SuperiorSkyblock2/issues)
+* [Download](https://bg-software.com/superiorskyblock/)
