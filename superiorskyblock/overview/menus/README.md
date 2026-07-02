@@ -15,6 +15,10 @@ You have the ability to edit the style of the menu, which includes its title, it
 Note: Some menus might have additional custom fields that are not addressed in this tutorial. (i.e. [Schematics](../schematics.md))
 {% endhint %}
 
+{% hint style="info" %}
+The plugin ships version-variant menu files (for example `warps1_12.yml`, `warps1_16.yml`) alongside the base files. These variants only swap material names and data values for older Minecraft versions - the plugin automatically picks the closest variant for your server version. You should only edit the file that matches your server's version.
+{% endhint %}
+
 | Field Name      | Description                                                                                                                                                  | Supported Menus |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
 | `title`         | Custom title for the menu. Supports color codes, 1.16+ codes and placeholders                                                                                | All menus       |
@@ -26,6 +30,8 @@ Note: Some menus might have additional custom fields that are not addressed in t
 | `current-page`  | The display item of the current page of the menu.                                                                                                            | Paged menus     |
 | `next-page`     | The next page button for paged menus.                                                                                                                        | Paged menus     |
 | `slots`         | The item symbol that will be used for the paged menu contents (warps, members, etc)                                                                          | Paged menus     |
+| `skip-one-item` | Whether the menu should display the object directly instead of opening the menu when there is only one object to display.                                    | Paged menus     |
+| `custom-order`  | A list of slot numbers that determines a custom ordering for the paged menu contents.                                                                        | Paged menus     |
 
 &#x20;Besides all of these fields, there is another field that is really important - `pattern`.\
 This field determines the pattern of the menu, or in other words - the amount of rows that the menu has and the items in the menu. This field is a list of strings that represents the rows of the menu. Each string should contain the amount of columns the menu has.\
@@ -89,7 +95,8 @@ Note: SuperiorSkyblock only supports material names, ids are not supported. You 
 | `entity`       | Set the entity of the item, if it's a spawn egg. Replaces the usage of data values for legacy versions.                                                                   |
 | `customModel`  | Set a custom model data for items. This is used to set custom textures for the items using custom resource packs. Supported in 1.14+                                      |
 | `leatherColor` | Set a custom color for a piece of leather armor, in hex format.                                                                                                           |
-| `banner`       | List of banner patterns. This is a section that contains sub-sections, each represents a pattern. Each pattern section has `dye` field and `pattern` field                |
+| `bannerMeta`   | A section of banner patterns. Each sub-section is a [dye color](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/DyeColor.html) with a [pattern type](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/block/banner/PatternType.html) as its value.  |
+| `trim`         | A section for an armor trim. Must contain a `material` field (trim material) and a `pattern` field (trim pattern). Supported in 1.20+                                     |
 | `itemModel`    | Set an item model for items. This is used to set custom textures for the items using custom resource packs. Supported in 1.21.4+                                          |
 | `rarity`       | Set the rarity of the item, affecting the color of the item's name. Supported in 1.20.6+                                                                                  |
 | `source`       | Path to another section where the item is configured                                                                                                                      |
@@ -97,7 +104,7 @@ Note: SuperiorSkyblock only supports material names, ids are not supported. You 
 
 #### Effects Section
 
-The effects section is used to add effects for potion items. Each effect will have it's own section, and two custom sub-sections: `duration` and `amplifier`.\
+The effects section is used to add effects for potion items. Each effect will have it's own section, and two custom sub-sections: `duration` and `amplifier`. The `duration` field is required - effects without it will be skipped.\
 Here is an example for a potion item with a speed 2 effect that lasts for 5 minutes:
 
 ```yaml
@@ -106,10 +113,27 @@ Here is an example for a potion item with a speed 2 effect that lasts for 5 minu
   effects:
     # Add speed effect to the potion
     speed:
-      # The duration of the effect, in seconds
-      duration: 300
+      # The duration of the effect, in ticks (20 ticks = 1 second)
+      duration: 6000
       # The amplifier of the effect. Calculated as the desired level - 1.
       amplifier: 1
+```
+
+#### Access Buttons
+
+Some menus (Biomes, Island Creation, Permissions, Settings and more) use buttons with multiple states depending on whether the player can use them. Instead of a single item, these buttons contain sub-sections such as `access` and `no-access` (or menu-specific names like `settings-enabled` and `settings-disabled`), where each sub-section is a regular item-section. Check the page of the specific menu for the exact state names it supports.
+
+```yaml
+items:
+  'A':
+    # Displayed when the player can use the button.
+    access:
+      type: LIME_STAINED_GLASS_PANE
+      name: '&aClick me!'
+    # Displayed when the player cannot use the button.
+    no-access:
+      type: RED_STAINED_GLASS_PANE
+      name: '&cNo access!'
 ```
 
 ## Giving sounds to items
