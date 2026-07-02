@@ -40,10 +40,37 @@ The plugin contains a few configuration files where you can edit the behavior of
 
 * config.yml\
   The configuration file contains a lot of different options that can be toggled and changed of the plugin. If you don't like a feature and want it to be disabled, that's the first place to look for it. The plugin is almost entirely configurable, and everything is done through this file.
+* entity-categories.yml\
+  The entity categories file contains categories of entities, and lets you configure which [island privileges](island-privileges.md) and [island flags](island-flags.md) control the actions done to the entities of each category. Each category has an `entities` list and an `actions` section with the following actions:
+
+  * `SPAWN` - The privilege required to spawn the entities using spawn eggs.
+  * `DAMAGE` - The privilege required to damage the entities.
+  * `INTERACT` - The privilege required to interact with the entities.
+  * `SPAWNER_SPAWN` - The island flag required so the entities can spawn from spawners.
+  * `NATURAL_SPAWN` - The island flag required so the entities can spawn naturally.
+
+  ```yaml
+  VILLAGERS:
+    entities:
+      - VILLAGER
+    actions:
+      INTERACT: VILLAGER_TRADING
+  ```
+
+  You can create as many custom categories as you want, and using privilege or flag names that don't exist in the plugin will register them as new custom privileges/flags. The `ANIMAL`, `MONSTER`, `TAMEABLE` and `VEHICLE` categories are built-in groups - they do not have an `entities` list, and their entities are added automatically depending on your Minecraft version.
 * heads.yml\
   The heads file contains a list of custom skins for different mobs that can be seen in `/is values` and inside other menus. The skins are base64 and can be taken from services online (such as [https://minecraft-heads.com/](https://minecraft-heads.com/))
 * interactables.yml\
-  The interactables file contains a list of blocks that player can interact with. The plugin will block the interaction with these blocks if the player lacks the `INTERACT` privilege on an island. This gives the ability to block custom interactions with custom blocks.\
-  Blocks that are not listed under this file will not get checked when interacted, making other players to interact with them on other islands. This means that if, for example, `CHEST` is not listed under this file, all the players will be able to interact with chests on islands.
+  The interactables file contains lists of blocks that players can interact with, grouped by the [island privilege](island-privileges.md) that is required to interact with them:
+
+  ```yaml
+  <PRIVILEGE>:
+    - BLOCK_TYPE
+    - ...
+  ```
+
+  You can create as many custom privileges as you want - using a privilege name that doesn't exist in the plugin will register it as a new custom privilege. Each block should only be listed under one privilege.\
+  Blocks that are not listed in this file will not get checked when interacted, letting all players interact with them on other islands. This means that if, for example, `CHEST` is not listed under this file, all the players will be able to interact with chests on islands.\
+  The old format of the file - a single `interactables` list of blocks - is still supported: the plugin automatically converts it on startup by assigning a privilege to each block based on its type (chests to `CHEST_ACCESS`, containers to `USE`, signs to `SIGN_INTERACT`, spawners to `SPAWNER_BREAK`, farmland and crops to `FARM_TRAMPING`, turtle eggs to `TURTLE_EGG_TRAMPING`, lecterns to `PICKUP_LECTERN_BOOK`, and everything else to `INTERACT`).
 * safe\_blocks.yml\
   This safe blocks file contains a list of blocks that player can teleport to safely. The plugin blocks teleportation of players to blocks that are considered "unsafe" to prevent players dying when they are teleported to islands.
