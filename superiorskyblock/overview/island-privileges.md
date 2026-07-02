@@ -9,9 +9,16 @@ description: >-
 
 ## Built-in Privileges
 
+{% hint style="info" %}
+Some of the privileges below are not hardcoded in the plugin, but registered through the default configuration files: the [interactables.yml](configuration-files.md) file registers block-interaction privileges (`Interact`, `Use`, `Chest Access`, `Sign Interact`, `Farm Tramping`, `Turtle Egg Tramping`, `Pickup Lectern Book`), and the [entity-categories.yml](configuration-files.md) file registers entity-related privileges (`Animal Spawn`, `Animal Damage`, `Monster Spawn`, `Monster Damage`, `Allay Interact`, `Copper Golem Interact`, `Horse Interact`, `Nautilus Interact`, `Pickup Axolotl`, `Pickup Fish`, `Item Frame`, `Painting`, `Tamed Animal Damage`, `Minecart Place`, `Minecart Damage`). You can register your own custom privileges by adding new privilege names to these files, without writing any code.
+{% endhint %}
+
 **All**\
 Gives access to all the permissions.\
 Recommendation: Should only be given to island leaders.
+
+**Allay Interact**\
+Gives access to interact with allays inside the island
 
 **Animal Breed**\
 Gives access to breed animals inside the island.
@@ -32,7 +39,7 @@ Gives access to ban members from the island
 Gives access to break blocks inside the island
 
 **Brush**\
-Gives access to brush suspicious blocks inside the island
+Gives access to brush suspicious blocks inside the island (1.20+ servers only)
 
 **Build**\
 Gives access to build inside the island
@@ -44,7 +51,7 @@ Gives access to change the name of the island
 Gives access to access chests inside the island
 
 **Chorus Fruit**\
-Gives access to consume chorus fruids inside the island
+Gives access to consume chorus fruits inside the island (1.9+ servers only)
 
 **Close Bypass**\
 Gives bypass to the lock island status
@@ -54,6 +61,9 @@ Gives access to close (lock) the island to the public
 
 **Coop Member**\
 Gives access to add a player as a coop-member to the island
+
+**Copper Golem Interact**\
+Gives access to interact with copper golems inside the island
 
 **Delete Warp**\
 Gives access to delete island warps
@@ -146,6 +156,9 @@ Gives access to spawn monsters inside the island
 **Name Entity**\
 Gives access to nametag entities inside the island
 
+**Nautilus Interact**\
+Gives access to interact with nautiluses inside the island
+
 **Open Island**\
 Gives access to open (unlock) the island to the public
 
@@ -173,14 +186,14 @@ Gives access to promote members inside the island
 **Rankup**\
 Gives access to rankup upgrade levels
 
-**Rating Show**\
+**Ratings Show**\
 Gives access to see the ratings that were given to the island
 
 **Saddle Entity**\
 Gives access to add saddles to entities inside the island
 
 **Sculk Sensor**\
-Gives access to trigger sculk sensors inside the island
+Gives access to trigger sculk sensors inside the island (1.17+ servers only)
 
 **Set Biome**\
 Gives access to change the biome of the island
@@ -212,6 +225,9 @@ Gives access to interact with signs inside the island
 **Spawner Break**\
 Gives access to break spawners inside the island
 
+**Tamed Animal Damage**\
+Gives access to damage tamed animals inside the island
+
 **Turtle Egg Tramping**\
 Gives access to break turtle eggs when standing on them inside the island
 
@@ -228,7 +244,7 @@ Gives access to break valuable blocks inside the island
 Gives access to trade with villagers inside the island
 
 **Wind Charge**\
-Gives access to use wind charges inside the island
+Gives access to use wind charges inside the island (1.21+ servers only)
 
 **Withdraw Money**\
 Gives access to withdraw money from the island's bank

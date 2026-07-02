@@ -9,6 +9,10 @@ description: >-
 
 ## Built-in Flags
 
+{% hint style="info" %}
+The four entity-spawning flags below (`Natural Animals Spawn`, `Natural Monster Spawn`, `Spawner Animals Spawn`, `Spawner Monster Spawn`) are not hardcoded in the plugin, but registered through the `NATURAL_SPAWN` and `SPAWNER_SPAWN` actions of the [entity-categories.yml](configuration-files.md) file. You can register your own custom flags for other entity categories by adding new flag names to these actions, without writing any code.
+{% endhint %}
+
 **Always Day**\
 Toggles time to always be day inside the island.\
 This settings cannot work with other settings that change time.
