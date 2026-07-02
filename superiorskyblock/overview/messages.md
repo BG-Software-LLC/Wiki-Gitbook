@@ -69,7 +69,16 @@ MESSAGE:
     color: 'PINK'  # The color to be used for the bossbar.
     message: '&eThe message of bossbar'
     ticks: 100  # The duration of the bossbar (in ticks)
+    overlay: 'PROGRESS'  # The style of the bossbar.
 ```
+
+The valid colors are `PINK`, `BLUE`, `RED`, `GREEN`, `YELLOW`, `PURPLE` and `WHITE` - invalid colors will default to `PINK`.
+
+The valid overlays are `PROGRESS`, `NOTCHED_6`, `NOTCHED_10`, `NOTCHED_12` and `NOTCHED_20`.
+
+{% hint style="info" %}
+The `overlay` option only takes effect on servers with MiniMessage support (see below) - on other servers, the bossbar will always be displayed with the solid style.
+{% endhint %}
 
 ### Sounds
 
@@ -95,7 +104,12 @@ MESSAGE:
   b:
     text: '&6 I can execute commands, and I will be after the first message.'
     command: '/gmc'
+  c:
+    text: '&eI will put a command in the chat input instead of running it.'
+    suggest: '/island create '
 ```
+
+Each part supports the following options: `text` - the text to display; `tooltip` - hoverable text that is shown when hovering over the part; `command` - a command that will be executed when clicking the part; `suggest` - a command that will be put in the player's chat input when clicking the part (cannot be combined with `command`).
 
 {% embed url="https://bg-software.com/imgs/interactable-messages-example.mp4" %}
 
@@ -106,7 +120,7 @@ After you have the new file, you can edit it with the same technics that are exp
 
 ## MiniMessage Support
 
-If your server software has support to MiniMessage, you can use MiniMessage format in the language files and it will be automatically parsed correctly.
+If your server software has support to MiniMessage (Paper and its forks, on 1.18 and above), you can use MiniMessage format in the language files and it will be automatically parsed correctly.
 
 {% hint style="warning" %}
 You cannot use legacy color codes and MiniMessage format in the same message!
