@@ -28,6 +28,24 @@ _target-name_: The name of the target player to add.
 
 The permission to use the command is `superior.admin.add`
 
+### /island admin addbanklimit \<player-name / island-name / \*> \<limit>
+
+Add a bank limit to an existing bank limit of an island.
+
+#### Parameters
+
+_player-name_: The name of the player to add bank limit to his island.
+
+_island-name_: The name of the island to add bank limit to.
+
+_\*_: Add bank limit to all islands on the server.
+
+_limit_: The limit to add.
+
+#### Permission
+
+The permission to use the command is `superior.admin.addbanklimit`
+
 ### /island admin addblocklimit \<player-name / island-name / \*> \<material> \<limit>
 
 Add a block limit to an existing block limit of an island.
@@ -146,7 +164,7 @@ The permission to use the command is `superior.admin.addentitylimit`
 
 ### /island admin addeffect \<player-name / island-name / \*> \<effect> \<level>
 
-Add an island effect to an existing effect level for an  island.
+Add an island effect to an existing effect level for an island.
 
 #### Parameters
 
@@ -325,7 +343,7 @@ Close an island to the public.
 
 #### Aliases
 
-/is admin lock \<player-name / island-name>
+/island admin lock \<player-name / island-name>
 
 #### Parameters
 
@@ -356,7 +374,7 @@ You can use `{player-name}` as a placeholder for the island member's name.
 
 The permission to use the command is `superior.admin.cmdall`
 
-### /is admin count \<player-name / island-name> \[material]
+### /island admin count \<player-name / island-name> \[material]
 
 Check block counts of an island.
 
@@ -371,6 +389,40 @@ _material_: Check a specific count of a block.
 #### Permission
 
 The permission to use the command is `superior.admin.count`
+
+### /island admin data \<get/set/remove> \<player/island> \<player-name / island-name> \[path] \[value]
+
+Interact with persistent data of players or islands.
+
+#### Parameters
+
+_get/set/remove_: Whether to read, write or delete persistent data.
+
+_player/island_: Whether to interact with data of a player or an island.
+
+_player-name_: The name of the player to interact with his data.
+
+_island-name_: The name of the island to interact with its data.
+
+_path_: The path of the data. Optional for `get` and `remove`, required for `set`.
+
+_value_: The value to set. Required for `set`.
+
+#### Permission
+
+The permission to use the command is `superior.admin.data`
+
+### /island admin debug \[filter]
+
+Toggle debug outputs.
+
+#### Parameters
+
+_filter_: Show only debug outputs of a specific debug type.
+
+#### Permission
+
+The permission to use the command is `superior.admin.debug`
 
 ### /island admin delwarp \<player-name / island-name> \<warp-name>
 
@@ -431,6 +483,20 @@ _island-name_: The name of the island to disband.
 #### Permission
 
 The permission to use the command is `superior.admin.disband`
+
+### /island admin fly \<player-name> \[true/false]
+
+Toggle island fly for a player.
+
+#### Parameters
+
+_player-name_: The name of the player to toggle island fly for.
+
+_true/false_: Whether to enable or disable island fly. When omitted, the mode is toggled.
+
+#### Permission
+
+The permission to use the command is `superior.admin.fly`
 
 ### /island admin ignore \<player-name / island-name>
 
@@ -672,6 +738,10 @@ The permission to use the command is `superior.admin.reload`
 
 Remove a block limit of a block for an island.
 
+#### Aliases
+
+/island admin remblocklimit \<player-name / island-name / \*> \<material>
+
 #### Parameters
 
 _player-name_: The name of the player to remove block limit from his island.
@@ -685,6 +755,28 @@ _material_: The block to remove limit to.
 #### Permission
 
 The permission to use the command is `superior.admin.removeblocklimit`
+
+### /island admin removeentitylimit \<player-name / island-name / \*> \<entity>
+
+Remove an entity limit of an entity for an island.
+
+#### Aliases
+
+/island admin rementitylimit \<player-name / island-name / \*> \<entity>
+
+#### Parameters
+
+_player-name_: The name of the player to remove entity limit from his island.
+
+_island-name_: The name of the island to remove entity limit from.
+
+_\*_: Remove entity limit from all islands.
+
+_entity_: The entity to remove limit of.
+
+#### Permission
+
+The permission to use the command is `superior.admin.removeentitylimit`
 
 ### /island admin removeratings \<player-name / island-name / \*>
 
@@ -707,6 +799,38 @@ _\*_: Remove ratings from all islands.
 #### Permission
 
 The permission to use the command is `superior.admin.removeratings`
+
+### /island admin resetpermissions \<player-name / island-name / \*>
+
+Reset all island permissions for an island.
+
+#### Parameters
+
+_player-name_: The name of the player to reset island permissions for his island.
+
+_island-name_: The name of the island to reset island permissions for.
+
+_\*_: Reset island permissions for all islands.
+
+#### Permission
+
+The permission to use the command is `superior.admin.resetpermissions`
+
+### /island admin resetsettings \<player-name / island-name / \*>
+
+Reset all island settings for an island.
+
+#### Parameters
+
+_player-name_: The name of the player to reset island settings for his island.
+
+_island-name_: The name of the island to reset island settings for.
+
+_\*_: Reset island settings for all islands.
+
+#### Permission
+
+The permission to use the command is `superior.admin.resetsettings`
 
 ### /island admin resetworld \<player-name / island-name / \*> \<world>
 
@@ -731,22 +855,24 @@ Should be `normal`, `nether` or `the_end`. The world cannot be the default world
 
 The permission to use the command is `superior.admin.resetworld`
 
-### /island admin schematic \[schematic-name]
+### /island admin schematic \[schematic-name] \[save-air]
 
 Toggle schematic mode.\
 While in schematic mode, you can create new schematics.
 
 #### Aliases
 
-/island admin schem \[schematic-name]
+/island admin schem \[schematic-name] \[save-air]
 
 #### Parameters
 
 _schematic-name_: Save a schematic with the given name.
 
+_save-air_: Whether to save air blocks in the schematic (`true`/`false`).
+
 #### Permission
 
-The permission to use the command is `superior.admin.schem`
+The permission to use the command is `superior.admin.schematic`
 
 ### /island admin setbanklimit \<player-name / island-name / \*> \<limit>
 
@@ -758,7 +884,7 @@ _player-name_: The name of the player to set bank limit to his island.
 
 _island-name_: The name of the island to set bank limit to.
 
-_\*_: Reset a world for all islands.
+_\*_: Set bank limit to all islands.
 
 _limit_: The limit to set.
 
@@ -780,7 +906,7 @@ _player-name_: The name of the player to set biome to his island.
 
 _island-name_: The name of the island to set biome to.
 
-_\*_: Reset a world for all islands.
+_\*_: Set biome to all islands.
 
 _biome_: The biome to set.
 
@@ -856,7 +982,7 @@ _bonus_: The bonus to set.
 
 #### Permission
 
-The permission to use the command is `superior.admin.setbonus`
+The permission to use the command is `superior.admin.bonus`
 
 ### /island admin setchestrow \<player-name / island-name / \*> \<page> \<rows>
 
@@ -932,7 +1058,7 @@ The permission to use the command is `superior.admin.setdisbands`
 
 ### /island admin seteffect \<player-name / island-name / \*> \<effect> \<level>
 
-Set an island effect to an existing effect level for an  island.
+Set an island effect to an existing effect level for an island.
 
 #### Parameters
 
@@ -970,7 +1096,7 @@ _limit_: The limit set.
 
 The permission to use the command is `superior.admin.setentitylimit`
 
-### /island admin `set`generator \<player-name / island-name / \*> \<material> \<value> \[world]
+### /island admin setgenerator \<player-name / island-name / \*> \<material> \<value> \[world]
 
 Set generator rates to an island.
 
@@ -991,6 +1117,22 @@ _world_: The world to set rates in.
 #### Permission
 
 The permission to use the command is `superior.admin.setgenerator`
+
+### /island admin setislandpreview \<schematic-name>
+
+Set the preview location for an island schematic.
+
+#### Aliases
+
+/island admin setschematicpreview \<schematic-name>
+
+#### Parameters
+
+_schematic-name_: The name of the schematic to set the preview location for.
+
+#### Permission
+
+The permission to use the command is `superior.admin.setislandpreview`
 
 ### /island admin setleader \<leader> \<new-leader>
 
@@ -1236,7 +1378,7 @@ The permission to use the command is `superior.admin.show`
 
 ### /island admin spawn \[player-name]
 
-Teleport  to spawn.
+Teleport to spawn.
 
 #### Parameters
 
@@ -1245,6 +1387,26 @@ _player-name_: The name of the player to teleport.
 #### Permission
 
 The permission to use the command is `superior.admin.spawn`
+
+### /island admin syncbonus \<player-name / island-name / \*> \<worth/level>
+
+Sync the bonus of an island with the generated worlds.
+
+#### Parameters
+
+_player-name_: The name of the player to sync bonus for his island.
+
+_island-name_: The name of the island to sync bonus for.
+
+_\*_: Sync bonus for all islands.
+
+_worth_: Sync the worth bonus of the island.
+
+_level_: Sync the level bonus of the island.
+
+#### Permission
+
+The permission to use the command is `superior.admin.syncbonus`
 
 ### /island admin syncupgrades \<player-name / island-name / \*>
 
@@ -1274,7 +1436,7 @@ The permission to use the command is `superior.admin.spy`
 
 ### /island admin stats
 
-Show statistics aout the plugin.
+Show statistics about the plugin.
 
 #### Permission
 

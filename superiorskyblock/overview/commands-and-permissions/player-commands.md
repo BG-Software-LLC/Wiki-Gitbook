@@ -4,13 +4,13 @@
 Parameters inside `<>` are required, unlike parameters in `[]` which are optional.
 {% endhint %}
 
-### /island accept \<player-name / island-name>
+### /island accept \[player-name / island-name]
 
 Accept an invitation to an island from a player.
 
 #### Aliases
 
-/island join \<player-name / island-name>
+/island join \[player-name / island-name]
 
 #### Parameters
 
@@ -66,6 +66,18 @@ _logs_: Open the bank transaction logs menu.
 
 The permission to use the command is `superior.island.bank`
 
+### /island bans
+
+Open the banned players menu.
+
+#### Aliases
+
+/island banlist
+
+#### Permission
+
+The permission to use the command is `superior.island.bans`
+
 ### /island biome
 
 Change the biome of the island.
@@ -78,11 +90,15 @@ Change the biome of the island.
 
 The permission to use the command is `superior.island.biome`
 
-### /island border
+### /island border \[border-color]
 
 Change the border color of islands.
 
-Permission
+#### Parameters
+
+_border-color_: The color to set to the border. When omitted, the border color menu is opened.
+
+#### Permission
 
 The permission to use the command is `superior.island.border`
 
@@ -156,9 +172,13 @@ _island-name_: The name of the island to check block counts for.
 
 The permission to use the command is `superior.island.counts`
 
-### /island create \<island-name> \[schematic-name]
+### /island create \[island-name]
 
-Create a new island.
+Create a new island. The schematic is chosen through the island creation menu.
+
+#### Parameters
+
+_island-name_: The name to give to the new island. Required only when `island-names.required-for-creation` is enabled in the config.
 
 #### Permission
 
@@ -230,9 +250,11 @@ The permission to use the command is `superior.island.expel`
 
 Toggle island fly.
 
-Permission
+#### Permission
 
 The permission to use the command is `superior.island.fly`
+
+The permission is also checked when players join the server or switch worlds - island fly is automatically disabled for players without it.
 
 ### /island help \[page]
 
@@ -304,7 +326,7 @@ Open the members menu.
 
 #### Permission
 
-The permission to use the command is `superior.island.panel`
+The permission to use the command is `superior.island.members`
 
 ### /island mission complete \<mission-name>
 
@@ -322,13 +344,17 @@ _mission-name_: The name of the mission to complete.
 
 The permission to use the command is `superior.island.mission`
 
-### /island missions
+### /island missions \[mission-category]
 
 Open the missions menu.
 
 #### Aliases
 
-/island challenges
+/island challenges \[mission-category]
+
+#### Parameters
+
+_mission-category_: The name of the missions category to open directly.
 
 #### Permission
 
@@ -383,6 +409,8 @@ _toggle_: Whether to make `/is` open the panel menu.
 #### Permission
 
 The permission to use the command is `superior.island.panel`
+
+Opening the `members` menu also requires `superior.island.members`, and the `visitors` menu also requires `superior.island.visitors`.
 
 ### /island pardon \<player-name>
 
@@ -440,7 +468,7 @@ Level up an upgrade.
 
 #### Parameters
 
-_upgrade-name_: The name of the upgrad to rankup.
+_upgrade-name_: The name of the upgrade to rankup.
 
 #### Permission
 
@@ -536,9 +564,13 @@ Change the teleport location of your island.
 
 The permission to use the command is `superior.island.setteleport`
 
-### /island settings
+### /island settings \[reset]
 
 Open the settings menu.
+
+#### Parameters
+
+_reset_: Reset all island settings to their defaults.
 
 #### Permission
 
@@ -700,7 +732,7 @@ Open upgrades panel.
 
 #### Permission
 
-The permission to use he command is `superior.island.upgrade`
+The permission to use the command is `superior.island.upgrade`
 
 ### /island value \[material]
 
@@ -748,7 +780,7 @@ Open the visitors menu.
 
 #### Permission
 
-The permission to use the command is `superior.island.panel`
+The permission to use the command is `superior.island.visitors`
 
 ### /island warp \[player-name / island-name] \[warp-name]
 
