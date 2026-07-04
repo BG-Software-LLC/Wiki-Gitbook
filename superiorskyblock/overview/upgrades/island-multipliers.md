@@ -6,9 +6,9 @@ description: >-
 
 # Island Multipliers
 
-## Crops Growth
+## Crop Growth
 
-The crops-growth multiplier changes the rates of growth of crops in the island.&#x20;
+The crop-growth multiplier changes the rates of growth of crops in the island.&#x20;
 
 In order to understand how the crop-growth work, you must understand first how it works in vanilla. To do that, you must under a few concepts beforehand:
 

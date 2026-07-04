@@ -41,7 +41,7 @@ MESSAGE:
     text: '&aThis will be sent as an action bar!'
 ```
 
-{% embed url="https://bg-software.com/imgs/action-bar-example.mp4" %}
+{% embed url="https://static.bg-software.com/imgs/action-bar-example.mp4" %}
 
 ### Titles
 
@@ -57,7 +57,7 @@ MESSAGE:
     fade-out: 20  # Fade out duration (in ticks).
 ```
 
-{% embed url="https://bg-software.com/imgs/title-example.mp4" %}
+{% embed url="https://static.bg-software.com/imgs/title-example.mp4" %}
 
 ### Bossbars
 
@@ -111,7 +111,7 @@ MESSAGE:
 
 Each part supports the following options: `text` - the text to display; `tooltip` - hoverable text that is shown when hovering over the part; `command` - a command that will be executed when clicking the part; `suggest` - a command that will be put in the player's chat input when clicking the part (cannot be combined with `command`).
 
-{% embed url="https://bg-software.com/imgs/interactable-messages-example.mp4" %}
+{% embed url="https://static.bg-software.com/imgs/interactable-messages-example.mp4" %}
 
 ## Custom language file
 

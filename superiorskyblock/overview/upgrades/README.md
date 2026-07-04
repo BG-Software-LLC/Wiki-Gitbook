@@ -6,6 +6,26 @@ description: >-
 
 # Upgrades
 
+## The Upgrades Module
+
+Upgrades are part of the upgrades module of the plugin. Therefore, they are configured in the config file of the module, located in `plugins/SuperiorSkyblock2/modules/upgrades/config.yml`, and not in the main config.yml of the plugin.
+
+{% hint style="info" %}
+If you have an old `upgrades.yml` file from older versions of the plugin, it will be migrated automatically into the module's config file.
+{% endhint %}
+
+Besides the upgrades themselves, the config file of the module contains the following global settings:
+
+| Field            | Default | Description                                                                                    |
+| ---------------- | ------- | ---------------------------------------------------------------------------------------------- |
+| `enabled`        | true    | Whether the module should be enabled. When disabled, all module commands and features will also be disabled. |
+| `crop-growth`    | true    | Whether crop-growth should be enabled. When disabled, the plugin will not alter crop growth.   |
+| `mob-drops`      | true    | Whether mob drops should be enabled. When disabled, the plugin will not alter mob drops.       |
+| `island-effects` | true    | Whether island-effects should be enabled. When disabled, the plugin will not give any effects to any players. |
+| `spawner-rates`  | true    | Whether spawner-rates should be enabled. When disabled, the plugin will not alter spawner rates. |
+| `block-limits`   | true    | Whether block-limits should be enabled. When disabled, the plugin will not limit placement of blocks. |
+| `entity-limits`  | true    | Whether entity-limits should be enabled. When disabled, the plugin will not limit spawning of entities. |
+
 ## Creating your first upgrade
 
 Creating a new upgrade is an easy task to do!\
@@ -112,24 +132,53 @@ After I configured all of my levels, I must also add the last upgrade - level #4
 
 Finally, I have a working generator upgrade that will have it's values synced with all the islands. You can change the values anytime you want, and your islands will be synced automatically with it. Removing existing levels is not an option - you can just make the upgrade to do nothing, but removing it completely will cause errors from the plugin.
 
-You can use the following sections to alter island values: \
-`crops-growth`: The crop growth multiplier for this upgrade. \
-`spawner-rates`: The spawner rates multiplier for this upgrade. \
-`mob-drops`: The mob drops multiplier for this upgrade. \
-`team-limit`: The team limit for this upgrade. \
-`warps-limit`: The warps limit for this upgrade. \
-`coop-limit`: The coops limit for this upgrade. \
-`border-size`: The border size for this upgrade. \
-`block-limits`: The block limits for this upgrade. \
-&#xNAN;_&#x55;nder this section, all the blocks will be in the following format: "TYPE: LIMIT"._ \
-`entity-limits`: The entity limits for this upgrade. \
-&#xNAN;_&#x55;nder this section, all the entities will be in the following format: "TYPE: LIMIT"._ \
-`generator-rates`: The generator rates for this upgrade. \
-&#xNAN;_&#x55;nder this section, all the rates will be in the following format: "TYPE: CHANCE"._\
-&#x20;`island-effects`: The island effects for this upgrade. \
-&#xNAN;_&#x55;nder this section, all the effects will be in the following format: "EFFECT: LEVEL"._\
-`role-limits`: The role limits for this upgrade. \
-&#xNAN;_&#x55;nder this section, all the roles will be in the following format: "ROLE: LIMIT"._&#x20;
+## Level Fields
+
+Every level of an upgrade can have the following fields:
+
+| Field             | Type   | Description                                                                                                                                                             |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `price-type`      | String | The type of the price handler. Optional; when omitted, defaults to `money`. The value is case-insensitive. If an invalid price-type is used, the level will be skipped. |
+| `price`           | Double | The cost to upgrade to the next level.                                                                                                                                  |
+| `commands`        | List   | Commands that will be executed by the console when the level is purchased. You can use `%player%` for the player's name.                                               |
+| `permission`      | String | Optional permission that is required to purchase the level.                                                                                                             |
+| `required-checks` | List   | Optional conditions that must be met to purchase the level. More information below.                                                                                     |
+
+### Required Checks
+
+Using the `required-checks` field, you can add custom conditions that players must meet before they can purchase a level. Each entry in the list is in the format `<condition>;<error-message>`: the condition is evaluated by the [JavaScript engine](../javascript-engine.md) (placeholders are supported), and if it's not met, the error message will be sent to the player.
+
+For example, requiring the island to be at least level 10 in order to purchase the level:
+
+```yaml
+'2':
+  price-type: 'money'
+  price: 150000.0
+  required-checks:
+    - '%superior_island_level% >= 10;&cYour island must be level 10 or higher to purchase this upgrade!'
+  commands:
+    - ...
+```
+
+## Island Values
+
+You can use the following sections to alter island values:
+
+| Field             | Type    | Description                                                                                                                                                                                                                                                     |
+| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `crop-growth`     | Double  | The crop growth multiplier for this upgrade.                                                                                                                                                                                                                    |
+| `spawner-rates`   | Double  | The spawner rates multiplier for this upgrade.                                                                                                                                                                                                                  |
+| `mob-drops`       | Double  | The mob drops multiplier for this upgrade.                                                                                                                                                                                                                      |
+| `team-limit`      | Integer | The team limit for this upgrade.                                                                                                                                                                                                                                |
+| `warps-limit`     | Integer | The warps limit for this upgrade.                                                                                                                                                                                                                               |
+| `coop-limit`      | Integer | The coops limit for this upgrade.                                                                                                                                                                                                                               |
+| `border-size`     | Integer | The border size for this upgrade. Must not exceed the `max-island-size` from the main config, otherwise the level will be skipped.                                                                                                                              |
+| `bank-limit`      | String  | The maximum amount of money that can be deposited into the island bank for this upgrade. Supports large numbers.                                                                                                                                                |
+| `block-limits`    | Section | The block limits for this upgrade. All the blocks are in the format `TYPE: LIMIT`. Block types also support data values, in the format `TYPE:DATA`.                                                                                                             |
+| `entity-limits`   | Section | The entity limits for this upgrade. All the entities are in the format `TYPE: LIMIT`.                                                                                                                                                                           |
+| `generator-rates` | Section | The generator rates for this upgrade. The rates are configured per world environment (`normal`, `nether` or `the_end`), with all the rates in the format `TYPE: CHANCE`. Rates that are placed directly under the section (legacy format) will apply to the default world of the plugin. |
+| `island-effects`  | Section | The island effects for this upgrade. All the effects are in the format `EFFECT: LEVEL`, where the level is the in-game effect level (`SPEED: 1` gives Speed I). Invalid effect names are ignored.                                                               |
+| `role-limits`     | Section | The role limits for this upgrade. All the roles are in the format `ROLE-ID: LIMIT`, where the role id is the numeric id (weight) of the role from the main config, not its name.                                                                                |
 
 ## Price Types
 

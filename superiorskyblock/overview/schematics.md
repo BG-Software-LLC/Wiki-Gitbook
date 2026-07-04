@@ -26,7 +26,7 @@ For both, you can use these variables:\
 `{player}` - Island Owner's Name\
 `{island}` - Island Name _(If the island name does not exist, then it will default to the Island Owner's Name.)_
 
-{% embed url="https://bg-software.com/imgs/schematics-creation.mp4" %}
+{% embed url="https://static.bg-software.com/imgs/schematics-creation.mp4" %}
 
 ## WorldEdit Schematics
 

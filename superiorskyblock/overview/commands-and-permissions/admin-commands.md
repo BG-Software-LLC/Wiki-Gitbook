@@ -142,26 +142,6 @@ _amount_: The amount of disbands to add.
 
 The permission to use the command is `superior.admin.givedisbands`
 
-### /island admin addentitylimit \<player-name / island-name / \*> \<entity> \<limit>
-
-Add an entity limit to an existing entity limit of an island.
-
-#### Parameters
-
-_player-name_: The name of the player to add entity limit to his island.
-
-_island-name_: The name of the island to add entity limit to.
-
-_\*_: Add entity limit to all islands on the server.
-
-_entity_: The name of the entity type to add limit to.
-
-_limit_: The limit to add.
-
-#### Permission
-
-The permission to use the command is `superior.admin.addentitylimit`
-
 ### /island admin addeffect \<player-name / island-name / \*> \<effect> \<level>
 
 Add an island effect to an existing effect level for an island.
@@ -181,6 +161,26 @@ _level_: The level of the effect to add.
 #### Permission
 
 The permission to use the command is `superior.admin.addeffect`
+
+### /island admin addentitylimit \<player-name / island-name / \*> \<entity> \<limit>
+
+Add an entity limit to an existing entity limit of an island.
+
+#### Parameters
+
+_player-name_: The name of the player to add entity limit to his island.
+
+_island-name_: The name of the island to add entity limit to.
+
+_\*_: Add entity limit to all islands on the server.
+
+_entity_: The name of the entity type to add limit to.
+
+_limit_: The limit to add.
+
+#### Permission
+
+The permission to use the command is `superior.admin.addentitylimit`
 
 ### /island admin addgenerator \<player-name / island-name / \*> \<material> \<value> \[world]
 
@@ -1362,7 +1362,7 @@ _limit_: The limit to set.
 
 The permission to use the command is `superior.admin.setwarpslimit`
 
-### /island admin show \<player-name / island-name>
+### /island admin show \[player-name / island-name]
 
 Show information about an island.
 
@@ -1408,6 +1408,15 @@ _level_: Sync the level bonus of the island.
 
 The permission to use the command is `superior.admin.syncbonus`
 
+### /island admin spy
+
+Toggle chat spy mode.\
+While in spy mode, you can see messages of island-chats of other islands.
+
+#### Permission
+
+The permission to use the command is `superior.admin.spy`
+
 ### /island admin syncupgrades \<player-name / island-name / \*>
 
 Sync the multipliers and limits of an island with the upgrades.\
@@ -1424,15 +1433,6 @@ _\*_: Sync upgrades or all islands.
 #### Permission
 
 The permission to use the command is `superior.admin.syncupgrades`
-
-### /island admin spy
-
-Toggle chat spy mode.\
-While in spy mode, you can see messages of island-chats of other islands.
-
-#### Permission
-
-The permission to use the command is `superior.admin.spy`
 
 ### /island admin stats
 
