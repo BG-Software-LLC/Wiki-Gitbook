@@ -141,7 +141,7 @@ Every level of an upgrade can have the following fields:
 | `price-type`      | String | The type of the price handler. Optional; when omitted, defaults to `money`. The value is case-insensitive. If an invalid price-type is used, the level will be skipped. |
 | `price`           | Double | The cost to upgrade to the next level.                                                                                                                                  |
 | `commands`        | List   | Commands that will be executed by the console when the level is purchased. You can use `%player%` for the player's name.                                               |
-| `permission`      | String | Optional permission that is required to purchase the level.                                                                                                             |
+| `permission`      | String | Optional permission that is required to rankup to the configured level.                                                                                                              |
 | `required-checks` | List   | Optional conditions that must be met to purchase the level. More information below.                                                                                     |
 
 ### Required Checks
