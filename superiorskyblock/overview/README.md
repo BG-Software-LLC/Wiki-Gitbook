@@ -112,8 +112,11 @@ The plugins listed below will have their correct spawner-types calculated toward
 * [AdvancedSpawners](https://www.spigotmc.org/resources/75458/)
 * [EpicSpawners](https://songoda.com/marketplace/product/13)
 * [MergedSpawner](https://polymart.org/resource/189)
+* PvpingSpawners
 * [RoseStacker](https://www.spigotmc.org/resources/82729/)
-* [SilkSpawners](https://www.spigotmc.org/resources/7811/)
+* [SilkSpawners (By CandC_9_12)](https://www.spigotmc.org/resources/60063/)
+* [SilkSpawners (By timbru31)](https://www.spigotmc.org/resources/7811/)
+* [SmartSpawner](https://modrinth.com/plugin/smartspawner)
 * [UltimateStacker](https://songoda.com/marketplace/product/16)
 * [WildStacker](https://bg-software.com/wildstacker/)
 
@@ -137,6 +140,7 @@ The plugins listed below will be used to indicate vanished players. Vanished pla
 
 * [CMI](https://www.spigotmc.org/resources/3742/)
 * [Essentials](https://www.spigotmc.org/resources/9089/)
+* [PremiumVanish](https://www.spigotmc.org/resources/14404/)
 * [SuperVanish](https://www.spigotmc.org/resources/1331/)
 * [VanishNoPacket](https://dev.bukkit.org/projects/vanish/)
 
@@ -164,7 +168,17 @@ The plugins listed below will have their stacked blocks calculated towards top v
 
 The plugins listed below can be synced for worth value of blocks.
 
+* [CMI](https://www.spigotmc.org/resources/3742/)
+* [EconomyShopGUI](https://www.spigotmc.org/resources/69927/)
+* [EconomyShopGUI Premium](https://www.spigotmc.org/resources/104414/)
+* [Essentials](https://www.spigotmc.org/resources/9089/)
+* [ExcellentShop](https://www.spigotmc.org/resources/50696/)
+* [GUIShop](https://www.spigotmc.org/resources/2451/)
+* newtShop
+* [NextGens](https://www.spigotmc.org/resources/111857/)
+* QuantumShop
 * [ShopGUIPlus](https://www.spigotmc.org/resources/6515/)
+* [zShop](https://www.spigotmc.org/resources/74073/)
 
 ### Additional Plugins
 
