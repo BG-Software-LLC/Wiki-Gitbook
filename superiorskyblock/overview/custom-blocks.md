@@ -33,3 +33,9 @@ You can use custom blocks from Nexo by adding "NEXO:" prefix, then the name of t
 [https://modrinth.com/plugin/craftengine](https://modrinth.com/plugin/craftengine)
 
 You can use custom blocks from CraftEngine by adding "CRAFTENGINE:" prefix, then the name of the custom block from the plugin.
+
+## Nova
+
+[https://modrinth.com/plugin/nova-framework](https://modrinth.com/plugin/nova-framework)
+
+You can use custom blocks from Nova by adding "NOVA:" prefix, then the name of the custom block from the plugin.
