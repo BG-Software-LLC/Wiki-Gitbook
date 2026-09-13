@@ -94,11 +94,15 @@ The plugin has a few plugins that are supported by default. Here's a list of the
 
 * [CMI](https://www.spigotmc.org/resources/3742/)
 * [EconomyShopGUI](https://www.spigotmc.org/resources/69927/)
+* [EconomyShopGUI Premium](https://www.spigotmc.org/resources/104414/)
 * [Essentials](https://www.spigotmc.org/resources/9089/)
+* [ExcellentShop](https://www.spigotmc.org/resources/50696/)
 * [GUIShop](https://www.spigotmc.org/resources/2451/)
-* NewtShop
-* [QuantumShop](https://www.spigotmc.org/resources/50696/)
+* newtShop
+* [NextGens](https://www.spigotmc.org/resources/111857/)
+* QuantumShop
 * [ShopGUIPlus](https://www.spigotmc.org/resources/6515/)
+* [zShop](https://www.spigotmc.org/resources/74073/)
 
 #### Custom Claims
 
