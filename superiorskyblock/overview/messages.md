@@ -6,7 +6,7 @@ description: >-
 
 # Messages
 
-You can edit every message that you want that is inside the language files. Most of the messages are configured (about 99% of them), and you can edit them however you want. Some of them has built-in laceholders for displaying information about the action that was done.\
+You can edit every message that you want that is inside the language files. Most of the messages are configured (about 99% of them), and you can edit them however you want. Some of them has built-in placeholders for displaying information about the action that was done.\
 For example, the player that did the action, the target of the action, etc.
 
 In addition to the built-in placeholders, all of the messages support placeholders from PlaceholderAPI and MVdWPlaceholderAPI, which you can find on the main page. Furthermore, you can make more complex messages. For example, clickable messages with hoverable text and such.
@@ -16,7 +16,7 @@ In addition to the built-in placeholders, all of the messages support placeholde
 Raw messages are messages that only have a message without any extras - not clickable, not sent as an action bar or anything else. These messages are very simple to be editted. All you have to do is just edit the message as a string, and that's it!
 
 ```yaml
-RAW_MESSAGE: 'I am a raw message without any extras! &aColors are also supported! &{HEX:4e87ee}Even hex colors in 1.16 are supported!'
+RAW_MESSAGE: 'I am a raw message without any extras!'
 NEW_LINE_MESSAGE: |
   &aThis is the first line.
   &6This is the second line.
@@ -50,8 +50,8 @@ You can send titles, the big message in the middle of the screen, by using the f
 ```yaml
 MESSAGE:
   title:
-    title: '&aThe bigger text'  # If you don't want that to be sent, set this section to ''.
-    sub-title: '&6The smaller text'  # If you don't want that to be sent, set this section to ''.
+    title: '&aThe bigger text'  # If you don't want that to be sent, set this section to '' or skip it.
+    sub-title: '&6The smaller text'  # If you don't want that to be sent, set this section to '' or skip it.
     fade-in: 20  # Fade in duration (in ticks).
     duration: 60  # Message duration (in ticks).
     fade-out: 20  # Fade out duration (in ticks).
@@ -69,15 +69,16 @@ MESSAGE:
     color: 'PINK'  # The color to be used for the bossbar.
     message: '&eThe message of bossbar'
     ticks: 100  # The duration of the bossbar (in ticks)
-    overlay: 'PROGRESS'  # The style of the bossbar.
+    style: 'PROGRESS'  # The style of the bossbar.
 ```
 
 The valid colors are `PINK`, `BLUE`, `RED`, `GREEN`, `YELLOW`, `PURPLE` and `WHITE` - invalid colors will default to `PINK`.
 
-The valid overlays are `PROGRESS`, `NOTCHED_6`, `NOTCHED_10`, `NOTCHED_12` and `NOTCHED_20`.
+The valid styles are `SOLID`, `SEGMENTED_6`, `SEGMENTED_10`, `SEGMENTED_12` and `SEGMENTED_20` - invalid styless will default to `SOLID`.
 
 {% hint style="info" %}
-The `overlay` option only takes effect on servers with MiniMessage support (see below) - on other servers, the bossbar will always be displayed with the solid style.
+You can also use MiniMessage style equivalents - overlays. The valid overlays are `PROGRESS`, `NOTCHED_6`, `NOTCHED_10`, `NOTCHED_12` and `NOTCHED_20`.\
+However, we support both style and overlay names in the 'style' field, they are converted accordingly depending on the provider being used.
 {% endhint %}
 
 ### Sounds
@@ -88,9 +89,11 @@ You can play a sound when sending a message by using the following format:
 MESSAGE:
   sound:
     type: 'ENTITY_EXPERIENCE_ORB_PICKUP'  # The sound to be played.
-    volume: 1
-    pitch: 1
+    volume: 1  # The volume of the sound.
+    pitch: 1  # The pitch of the sound.
 ```
+
+You can find valid sounds [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html). However, make sure that the specific sound exists in your version of Minecraft.
 
 ### Interactable Messages
 
@@ -118,9 +121,13 @@ Each part supports the following options: `text` - the text to display; `tooltip
 Creating a new language file is very easy task to do. All you need to do is to copy the en-US.yml file, rename it with a valid language format, and that's it! You can find a list of available language formats [here](https://www.oracle.com/technetwork/java/javase/java8locales-2095355.html).\
 After you have the new file, you can edit it with the same technics that are explained above. When a new version comes out with new messages, your custom file will be updated automatically with the new messages, but in English.
 
+## Hex Colors Support
+
+If your server is running version 1.16 or above, you can use hex colors in the language files with the format `&{HEX:######}` and it will be automatically parsed correctly.
+
 ## MiniMessage Support
 
-If your server software has support to MiniMessage (Paper and its forks, on 1.18 and above), you can use MiniMessage format in the language files and it will be automatically parsed correctly.
+If your server software has support to MiniMessage (Paper and its forks, on 1.18 and above), you can use [MiniMessage format](https://docs.papermc.io/adventure/minimessage/format/) in the language files and it will be automatically parsed correctly.
 
 {% hint style="warning" %}
 You cannot use legacy color codes and MiniMessage format in the same message!
