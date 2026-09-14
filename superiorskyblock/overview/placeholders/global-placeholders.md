@@ -92,11 +92,18 @@ Get the total worth-value of all islands in raw format.
 
 1900000.00
 
-### superior\_island\_top\_worth\_<#>
+{% hint style="info" %}
+The default sorting types available are: `bank`, `level`, `players`, `rating` and `worth`.\
+You can register your own sorting-types using [API](https://wiki.bg-software.com/superiorskyblock/overview/api).
+{% endhint %}
 
-Get the name of an island in a specific place sorted by worth-values.
+### superior\_island\_top\_\<sorting-type>\_<#>
+
+Get the name of an island in a specific place sorted by sorting-type.
 
 #### Parameters
+
+\<sorting-type>: The sorting type used to sort the islands.
 
 _<#>_: The position of the island to get, ranging from 1.
 
@@ -104,23 +111,27 @@ _<#>_: The position of the island to get, ranging from 1.
 
 `superior_island_top_worth_1`
 
-### superior\_island\_top\_worth\_value\_<#>
+### superior\_island\_top\_\<sorting-type>\_value\_<#>
 
-Get the worth-value of an island in a specific place sorted by worth-values.
+Get the value of an island in a specific place sorted by sorting-type.
 
 #### Parameters
+
+\<sorting-type>: The sorting type used to sort the islands.
 
 _<#>_: The position of the island to get, ranging from 1.
 
 #### Example Usage
 
-`superior_island_top_worth_value_1`
+`superior_island_top_worth_1`
 
-### superior\_island\_top\_worth\_leader\_<#>
+### superior\_island\_top\_\<sorting-type>\_leader\_<#>
 
-Get the leader's name of an island in a specific place sorted by worth-values.
+Get the leader's name of an island in a specific place sorted by sorting-type.
 
 #### Parameters
+
+\<sorting-type>: The sorting type used to sort the islands.
 
 _<#>_: The position of the island to get, ranging from 1.
 
@@ -128,11 +139,13 @@ _<#>_: The position of the island to get, ranging from 1.
 
 `superior_island_top_worth_leader_1`
 
-### superior\_island\_top\_worth\_<#>\_\<placeholder>
+### superior\_island\_top\_\<sorting-type>\_<#>\_\<placeholder>
 
-Run a placeholder on an island in a specific place sorted by worth-values.
+Run a placeholder on an island in a specific place sorted by sorting-type.
 
 #### Parameters
+
+\<sorting-type>: The sorting type used to sort the islands.
 
 _<#>_: The position of the island to get, ranging from 1.
 
@@ -141,153 +154,3 @@ _<#>_: The position of the island to get, ranging from 1.
 #### Example Usage
 
 `superior_island_top_worth_1_bank_limit`
-
-### superior\_island\_top\_level\_<#>
-
-Get the name of an island in a specific place sorted by island-levels.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_level_1`
-
-### superior\_island\_top\_level\_value\_<#>
-
-Get the island-level of an island in a specific place sorted by island-levels.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_level_value_1`
-
-### superior\_island\_top\_level\_leader\_<#>
-
-Get the leader's name of an island in a specific place sorted by island-levels.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_level_leader_1`
-
-### superior\_island\_top\_level\_<#>\_\<placeholder>
-
-Run a placeholder on an island in a specific place sorted by island-levels.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-\<placeholder>: The placeholder to run.
-
-#### Example Usage
-
-`superior_island_top_level_1_bank_limit`
-
-### superior\_island\_top\_rating\_<#>
-
-Get the name of an island in a specific place sorted by ratings.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_rating_1`
-
-### superior\_island\_top\_rating\_value\_<#>
-
-Get the ratings-value of an island in a specific place sorted by ratings.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_rating_value_1`
-
-### superior\_island\_top\_rating\_leader\_<#>
-
-Get the leader's name of an island in a specific place sorted by ratings.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_rating_leader_1`
-
-### superior\_island\_top\_rating\_<#>\_\<placeholder>
-
-Run a placeholder on an island in a specific place sorted by ratings.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-\<placeholder>: The placeholder to run.
-
-#### Example Usage
-
-`superior_island_top_rating_1_bank_limit`
-
-### superior\_island\_top\_players\_<#>
-
-Get the name of an island in a specific place sorted by amount of players in islands.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_players_1`
-
-### superior\_island\_top\_players\_value\_<#>
-
-Get the amount of players inside an island in a specific place sorted by amount of players in islands.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_players_value_1`
-
-### superior\_island\_top\_players\_leader\_<#>
-
-Get the leader's name of an island in a specific place sorted by amount of players in islands.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-#### Example Usage
-
-`superior_island_top_players_leader_1`
-
-### superior\_island\_top\_players\_<#>\_\<placeholder>
-
-Run a placeholder on an island in a specific place sorted by amount of players in islands.
-
-#### Parameters
-
-_<#>_: The position of the island to get, ranging from 1.
-
-\<placeholder>: The placeholder to run.
-
-#### Example Usage
-
-`superior_island_top_players_1_bank_limit`
