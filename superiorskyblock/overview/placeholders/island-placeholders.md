@@ -656,21 +656,17 @@ Get the amount of members of an island.
 
 Get the amount of online members of an island.
 
-### superior\_island\_top\_worth\_position
+### superior\_island\_top\_\<sorting-type>\_position
 
-Get the position of an island sorted by worth-value, ranging from 1.
+Get the position of an island sorted by the given sorting type, ranging from 1.
 
-### superior\_island\_top\_level\_position
+#### Parameters
 
-Get the position of an island sorted by island-levels, ranging from 1.
+_\<sorting-type>_: The sorting type to sort islands by. A list of the default sorting types can be found [here](global-placeholders.md#sorting-types).
 
-### superior\_island\_top\_rating\_position
+#### Example Usage
 
-Get the position of an island sorted by ratings, ranging from 1.
-
-### superior\_island\_top\_players\_position
-
-Get the position of an island sorted by visitors and members inside the island, ranging from 1.
+`superior_island_top_bank_position`
 
 ### superior\_island\_unique\_visitors\_count
 

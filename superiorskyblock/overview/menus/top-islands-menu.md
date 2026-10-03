@@ -41,7 +41,7 @@ You can create buttons that change the sorting type of the islands. These button
 
 | Field Name     | Field Type | Description                                                                       |
 | -------------- | ---------- | ---------------------------------------------------------------------------------- |
-| `sorting-type` | String     | The sorting type to switch to. Can be `WORTH`, `LEVEL`, `RATING` or `PLAYERS`.    |
+| `sorting-type` | String     | The sorting type to switch to. Can be `WORTH`, `LEVEL`, `RATING`, `PLAYERS` or `BANK`. |
 
 ### Items Section
 

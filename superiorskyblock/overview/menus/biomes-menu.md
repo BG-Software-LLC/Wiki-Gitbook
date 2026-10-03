@@ -35,6 +35,7 @@ These speical-type buttons do not follow the format of regular items and have cu
 | `biome`     | String       | The biome to change. List of biomes can be found [here](biomes-menu.md#general-sections).  |
 | `access`    | Item-Section | The item that will be displayed when players have permission to change to the biome.       |
 | `no-access` | Item-Section | The item that will be displayed when players don't have permission to change to the biome. |
+| `permission` | String | The permission players must have in order to change to the biome. If not set, all players can change to the biome. |
 
 {% hint style="info" %}
 The `access` and `no-access` fields can be used in sounds and commands sections as well to achieve custom sounds/commands when having/not having permission to change to the biome.
@@ -48,12 +49,98 @@ In this section you can configure custom sounds that will be played when players
 
 In this section you can configure custom commands that will be executed when players click the items in the menu. You can find a tutorial on how to properly configure commands [here](https://wiki.bg-software.com/superiorskyblock/menus#running-custom-commands).
 
-### Permissions Section
-
-In this section you can configure required-permissions for your items that players must have before they can click an item. You can find a tutorial on how to properly configure permissions [here](https://wiki.bg-software.com/superiorskyblock/menus#permissions-section).
-
 ### Menu Example
 
-This is an example of a biomes menu, which includes most of the technics and features stated in this tutorial.
+This is the default biomes menu, which includes most of the technics and features stated in this tutorial.
 
-{% embed url="https://gist.github.com/OmerBenGera/be693782389bfee0749fd6207e17bb66" %}
+```yaml
+title: '&lIsland Biomes'
+previous-menu: true
+
+pattern:
+  - '# # # # # # # # #'
+  - '# @ @ @ @ @ @ @ #'
+  - '# @ @ @ @ @ @ @ #'
+  - '# @ @ @ @ @ @ @ #'
+  - '$ $ $ $ $ $ $ $ $'
+  - '# # % # * # ^ # #'
+
+slots: '@'
+previous-page: '%'
+current-page: '*'
+next-page: '^'
+
+# Should the current biome be glowing?
+current-biome-glow: false
+
+# How should the dimension in which the player changes biome be selected?
+# DEFAULT  - Always uses the default dimension.
+# ARGUMENT - Uses the dimension from the command argument, or the default if invalid.
+# LOCATION - Uses the player's current dimension, or the default if is not inside the island world.
+# AUTO     - Prioritizes ARGUMENT, then LOCATION or DEFAULT if the previous ones fail.
+dimension-selection-mode: DEFAULT
+
+items:
+  '$':
+    type: STAINED_GLASS_PANE
+    data: 15
+    name: '&f'
+  '%':
+    type: PAPER
+    name: '{0}Previous Page'
+  '*':
+    type: DOUBLE_PLANT
+    name: '&aCurrent Page'
+    lore:
+      - '&7Page {0}'
+  '^':
+    type: PAPER
+    name: '{0}Next Page'
+
+biomes:
+  BEACH:
+    dimension: NORMAL
+    access:
+      type: SAND
+      name: '&eBeach Biome &a(Available)'
+      lore:
+        - '&7Change your island biome.'
+      sound:
+        type: ENDERMAN_TELEPORT
+        volume: 0.8
+        pitch: 0.2
+    no-access:
+      type: SAND
+      name: '&eBeach Biome &c(Unavailable)'
+      lore:
+        - '&7Change your island biome.'
+      sound:
+        type: ANVIL_LAND
+        volume: 0.8
+        pitch: 0.2
+
+  BIRCH_FOREST:
+    dimension: NORMAL
+    access:
+      type: SAPLING
+      data: 2
+      name: '&eBirch Forest Biome &a(Available)'
+      lore:
+        - '&7Change your island biome.'
+      sound:
+        type: ENDERMAN_TELEPORT
+        volume: 0.8
+        pitch: 0.2
+    no-access:
+      type: SAPLING
+      data: 2
+      name: '&eBirch Forest Biome &c(Unavailable)'
+      lore:
+        - '&7Change your island biome.'
+      sound:
+        type: ANVIL_LAND
+        volume: 0.8
+        pitch: 0.2
+
+  # ... more biomes follow the same format ...
+```

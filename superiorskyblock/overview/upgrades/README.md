@@ -140,6 +140,7 @@ Every level of an upgrade can have the following fields:
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `price-type`      | String | The type of the price handler. Optional; when omitted, defaults to `money`. The value is case-insensitive. If an invalid price-type is used, the level will be skipped. |
 | `price`           | Double | The cost to upgrade to the next level.                                                                                                                                  |
+| `prices`          | Section | Optional section for requiring multiple prices to upgrade to the next level. When used, the `price-type` and `price` fields of the level are ignored. More information [below](#multiple-prices). |
 | `commands`        | List   | Commands that will be executed by the console when the level is purchased. You can use `%player%` for the player's name.                                               |
 | `permission`      | String | Optional permission that is required to rankup to the configured level.                                                                                                              |
 | `required-checks` | List   | Optional conditions that must be met to purchase the level. More information below.                                                                                     |
@@ -182,8 +183,8 @@ You can use the following sections to alter island values:
 
 ## Price Types
 
-The plugin has two pre-defined price types - money based prices and placeholders based prices.\
-Simply add the `price-type` section to your upgrade with the price-type you want. Currently there are two different ones: `money` and `placeholders:`
+The plugin has three pre-defined price types - money based prices, placeholders based prices and items based prices.\
+Simply add the `price-type` section to your upgrade with the price-type you want. Currently there are three different ones: `money`, `placeholders` and `items`.
 
 #### money
 
@@ -207,15 +208,26 @@ You must add the following fields to your upgrade to get this working:
 | `placeholder`       | String | The placeholder that represents the balance of the player.                                                                                         |
 | `withdraw-commands` | List   | <p>A list of commands to be executed for withdrawing money.<br>You can use %player% for player's name and %amount% for the amount to withdraw.</p> |
 
+#### items
+
+When using this price-type, items will be taken from the players' inventories.
+
+You must add the following fields to your upgrade to get this working:
+
+| Required Field | Type    | Description                                                                                                                            |
+| -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `amount`       | Integer | The amount of items required to upgrade to next level.                                                                                 |
+| `types`        | List    | A list of item types that can be used to pay the price. Items of all the listed types are counted together towards the required amount. |
+
 {% hint style="info" %}
 You can register custom price types using the API.
 {% endhint %}
 
 ### Example
 
-In the example below, you can find two upgrades (each has only one level) with different price types.&#x20;
+In the example below, you can find three upgrades (each has only one level) with different price types.&#x20;
 
-The first upgrade, `money-example-upgrade`, has a `money` price-type configured to it. The second one, `placeholders-example-upgrade`, has a `placeholders` price-type. \
+The first upgrade, `money-example-upgrade`, has a `money` price-type configured to it. The second one, `placeholders-example-upgrade`, has a `placeholders` price-type. The third one, `items-example-upgrade`, has an `items` price-type that requires 64 diamonds or emeralds (or a mix of both). \
 For this example, assume the placeholder `%custom_economy_balace%` returns an integer with the balance of the player and the command `/customeco take <player-name> <price>` takes the given balance from the given player.
 
 ```yaml
@@ -235,4 +247,47 @@ upgrades:
       - 'customeco take %player% 1000000'
       commands:
         - ...
+  items-example-upgrade:
+    '1':
+      price-type: 'items'
+      amount: 64
+      types:
+        - 'DIAMOND'
+        - 'EMERALD'
+      commands:
+        - ...
 ```
+
+## Multiple Prices
+
+A level can require more than one price in order to upgrade to the next level. Instead of configuring the `price-type` and `price` fields directly in the level, add a `prices` section to the level. Each sub-section of the `prices` section is a single price: it has its own `price-type` field, alongside the fields required by that price-type. The names of the sub-sections can be anything you want.
+
+Players must be able to pay all the prices in order to upgrade, and all of them will be taken when upgrading. Prices with invalid configuration will be skipped, and if none of the prices are valid, the level will be skipped.
+
+In the example below, upgrading to the second level costs 500,000 money and 32 diamonds:
+
+```yaml
+upgrades:
+  island-generators:
+    '1':
+      prices:
+        money-price:
+          price-type: 'money'
+          price: 500000.0
+        diamonds-price:
+          price-type: 'items'
+          amount: 32
+          types:
+            - 'DIAMOND'
+      commands:
+        - 'island admin setupgrade %player% island-generators 2'
+      generator-rates:
+        normal:
+          STONE: 85
+          COAL_ORE: 10
+          IRON_ORE: 5
+```
+
+{% hint style="warning" %}
+The price placeholders of the [upgrades menu](../menus/upgrades-menu.md) only show the first price of the level.
+{% endhint %}
