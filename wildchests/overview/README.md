@@ -38,17 +38,26 @@ The plugin brings custom functionalities to the vanilla chests. Larger chests, a
 
 ## Supported Plugins
 
-* [ChestShop](https://www.spigotmc.org/resources/51856/)
+### Prices Providers
+
 * [CMI](https://www.spigotmc.org/resources/3742/)
 * [EconomyShopGUI](https://www.spigotmc.org/resources/69927/)
+* [EconomyShopGUI Premium](https://www.spigotmc.org/resources/104414/)
 * [Essentials](https://www.spigotmc.org/resources/9089/)
-* [QuantumShop](https://www.spigotmc.org/resources/50696/)
+* [ExcellentShop](https://www.spigotmc.org/resources/50696/)
+* [GUIShop](https://www.spigotmc.org/resources/2451/)
+* newtShop
+* [NextGens](https://www.spigotmc.org/resources/111857/)
+* QuantumShop
 * [ShopGUIPlus](https://www.spigotmc.org/resources/6515/)
-* [zShop](https://www.spigotmc.org/resources/74073/)<br>
+* [zShop](https://www.spigotmc.org/resources/74073/)
+
+### Additional Plugins
+
 * [SuperiorSkyblock](https://bg-software.com/superiorskyblock/)\
   The plugin will deposit money into the islands' banks of players!\
   You can use the chests' names in SuperiorSkyblock for giving them different worth values!
 * [TransportPipes](https://www.spigotmc.org/resources/20873/)\
   Moving items in and out of custom chests will work!
 * [WildStacker](https://bg-software.com/wildstacker/)\
-  The plugin will dropped items as stacked items and will collect stacked items!
+  The plugin will drop items as stacked items and will collect stacked items!
