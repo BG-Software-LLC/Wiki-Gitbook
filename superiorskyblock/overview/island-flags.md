@@ -108,7 +108,7 @@ public final class SwimmingFlag implements Listener {
 ```
 
 {% hint style="info" %}
-PluginInitializeEvent is called in the onEnable() method of SuperiorSkyblock. Therefore, you must have your plugin enabling before SuperiorSkyblock, which can be done by adding "SuperiorSkyblock2" as a depend/softdepend plugin.
+PluginInitializeEvent is called in the onEnable() method of SuperiorSkyblock. Therefore, you must have your plugin enabling before SuperiorSkyblock, which can be done by adding "SuperiorSkyblock2" as a loadbefore plugin.
 {% endhint %}
 
 After registering the custom flag, we can simply implement the restriction for swimming!
